@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0c47a08a49.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="backgroundColor">
+    <!--加入class"backgroundColor / todolistBackground "切換背景顏色 --> 
+    
+    <!-- header -->
+    <header class="header displayNone">
+        <div class="header-img"></div>
+        <div class="header-right">
+            <p id="headerNickname"></p>
+            <a href="#" id="headerLogout">登出</a>
+        </div>
+    </header>
+
+
+    <div class="loginBackground">
+        <!-- 登入頁面 -->
+        <div class="loginPage ">
+            <div class="todoListImg"></div>
+            <div class="login">
+                <h1 class="title">最實用的線上代辦事項服務</h1>
+                <div class="loginInput">
+                    <label for="">Email</label>
+                    <input type="email" placeholder="請輸入Email" id="loginEmail" value="aaa@gmail.com"/>
+                </div>
+                <div class="loginInput">
+                    <label for="">密碼</label>
+                    <input type="password" placeholder="請輸入密碼" id="loginPassword" value="123456"/>
+                </div>
+                <div class="loginBtn">
+                    <a href="#" id="loginBtn"><button>登入</button></a>
+                </div>
+                <div class="signUpLink">
+                    <a href="#" id="signUpLink">註冊帳號</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 註冊頁面 -->
+        <div class="signUpPage displayNone">
+            <div class="todoListImg"></div>
+            <form class="signUp">
+                <h1 class="title">註冊帳號</h1>
+                <div class="signUpInput">
+                    <label for="signUpEmail">Email</label>
+                    <input type="email" placeholder="請輸入Email" id="signUpEmail" required/>
+                </div>
+                <div class="signUpInput">
+                    <label for="signUpNickname">您的暱稱</label>
+                    <input type="text" placeholder="請輸入密碼" id="signUpNickname" required/>
+                </div>
+                <div class="signUpInput">
+                    <label for="signUpPassword">密碼</label>
+                    <input type="password" placeholder="請輸入密碼" id="signUpPassword" required pattern="[a-zA-Z0-9]{6,}"/>
+                </div>
+                <div class="signUpInput">
+                    <label for="signUpPasswordCheck">再次輸入密碼</label>
+                    <input type="password" placeholder="請再次輸入密碼" id="signUpPasswordCheck" required pattern="[a-zA-Z0-9]{6,}"/>
+                </div>
+                <div class="signUpBtn">
+                    <button type="submit" id="signUpBtn">註冊</button>
+                </div>
+                <div class="loginLink">
+                    <a href="#" id="loginLink">登入</a>
+                </div>
+            </form>
+        </div>
+
+        <!--todolist頁面 -->
+            
+        <div class="container todoPage displayNone">
+            <h1>TODO LIST</h1>
+            <div class="card input">
+                <input type="text" class="addList" placeholder="請輸入待辦事項" />
+                <a href="#" class="btn_add">+</a>
+            </div>
+            <div class="todoList">
+                <div class="card card_list">
+                    <ul class="tab" id="tab">
+                        <li class="active" data-tab="all" id="tabAll">全部</li>
+                        <li data-tab="unfinished">待完成</li>
+                        <li data-tab="finished">已完成</li>
+                    </ul>
+                    <div class="cart_content">
+                        <ul class="list" id="list">
+
+                        </ul>
+                        <div class="list_footer">
+                        <p><span id='listNum'>0</span> 個待完成項目</p>
+                        <a href="#" id='deleteDone'>清除已完成項目</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="todoEmpty displayNone">
+                <p class="todoEmptyText">目前尚無待辦事項</p>
+                <div class="todoEmptyImg"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
