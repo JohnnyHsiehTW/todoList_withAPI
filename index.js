@@ -177,6 +177,7 @@ headerLogout.addEventListener('click', logout)
 function logout() {
   axios.delete(`${apiUrl}/users/sign_out`)
   .then(response=>{
+    axios.defaults.headers.common['Authorization'] = '';
     let logoutMessage = response.data.message
       Swal.fire({
         position: "center",
